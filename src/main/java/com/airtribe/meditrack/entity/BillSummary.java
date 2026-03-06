@@ -1,4 +1,4 @@
-package main.java.com.airtribe.meditrack.entity;
+package com.airtribe.meditrack.entity;
 
 public final class BillSummary {
 
@@ -10,5 +10,10 @@ public final class BillSummary {
 
     public double getTotalAmount() {
         return totalAmount;
+    }
+
+    @Override
+    public String toString() {
+        return "BillSummary{totalAmount=" + totalAmount + "}";
     }
 }

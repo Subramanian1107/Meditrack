@@ -1,4 +1,4 @@
-package main.java.com.airtribe.meditrack.entity;
+package com.airtribe.meditrack.entity;
 
 public enum Specialization {
     CARDIOLOGY,

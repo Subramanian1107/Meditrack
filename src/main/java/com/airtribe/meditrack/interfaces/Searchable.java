@@ -1,4 +1,4 @@
-package main.java.com.airtribe.meditrack.interfaces;
+package com.airtribe.meditrack.interfaces;
 
 import java.util.List;
 

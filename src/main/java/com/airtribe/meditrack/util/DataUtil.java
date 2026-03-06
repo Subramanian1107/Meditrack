@@ -1,4 +1,4 @@
-package main.java.com.airtribe.meditrack.util;
+package com.airtribe.meditrack.util;
 
 public class DataUtil {
 }
