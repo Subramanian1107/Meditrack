@@ -140,15 +140,13 @@ This keeps billing logic flexible and extendable.
 
 ---
 
-## Service Layer Pattern
+## Singleton Pattern
 
-Business logic is separated into service classes:
+Used for generating unique IDs across the system.
 
-- DoctorService
-- PatientService
-- AppointmentService
+- IdGenerator
 
-This improves maintainability and scalability.
+Ensures only one instance exists and provides a centralized way to generate unique IDs for doctors, patients, and appointments.
 
 ---
 
@@ -234,5 +232,5 @@ Possible enhancements:
 # 👨‍💻 Author
 
 **Subramanian**  
-Master's in Computer Science  
-Project: MediTrack – Clinic Management System
+**Mithun Yentrapati**
+**Tushar Khobragade**
