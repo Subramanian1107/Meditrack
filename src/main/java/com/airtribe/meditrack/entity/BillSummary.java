@@ -11,4 +11,9 @@ public final class BillSummary {
     public double getTotalAmount() {
         return totalAmount;
     }
+
+    @Override
+    public String toString() {
+        return "BillSummary{totalAmount=" + totalAmount + "}";
+    }
 }
