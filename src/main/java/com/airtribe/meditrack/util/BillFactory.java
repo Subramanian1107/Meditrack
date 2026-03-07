@@ -1,9 +1,9 @@
-package com.airtribe.meditrack.util;
+package main.java.com.airtribe.meditrack.util;
 
-import com.airtribe.meditrack.entity.Appointment;
-import com.airtribe.meditrack.entity.Bill;
-import com.airtribe.meditrack.entity.BillSummary;
-import com.airtribe.meditrack.interfaces.Payable;
+import main.java.com.airtribe.meditrack.entity.Appointment;
+import main.java.com.airtribe.meditrack.entity.Bill;
+import main.java.com.airtribe.meditrack.entity.BillSummary;
+import main.java.com.airtribe.meditrack.interfaces.Payable;
 
 /** Factory for creating different bill types (Factory pattern). */
 public final class BillFactory {

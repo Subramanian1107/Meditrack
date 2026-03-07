@@ -1,6 +1,6 @@
-package com.airtribe.meditrack.util;
+package main.java.com.airtribe.meditrack.util;
 
-import com.airtribe.meditrack.exception.InvalidDataException;
+import main.java.com.airtribe.meditrack.exception.InvalidDataException;
 
 public final class Validator {
 

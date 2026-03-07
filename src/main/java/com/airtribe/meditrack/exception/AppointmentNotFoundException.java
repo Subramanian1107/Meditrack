@@ -1,4 +1,4 @@
-package com.airtribe.meditrack.exception;
+package main.java.com.airtribe.meditrack.exception;
 
 public class AppointmentNotFoundException extends Exception {
 

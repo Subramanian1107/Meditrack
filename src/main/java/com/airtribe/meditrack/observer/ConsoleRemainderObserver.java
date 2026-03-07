@@ -1,9 +1,9 @@
-package com.airtribe.meditrack.observer;
+package main.java.com.airtribe.meditrack.observer;
 
-import com.airtribe.meditrack.entity.Appointment;
+import main.java.com.airtribe.meditrack.entity.Appointment;
 
 /** Console-based reminder for appointments (Observer pattern). */
-public class ConsoleReminderObserver implements AppointmentObserver {
+public class ConsoleRemainderObserver implements AppointmentObserver {
 
     @Override
     public void onAppointmentCreated(Appointment appointment) {

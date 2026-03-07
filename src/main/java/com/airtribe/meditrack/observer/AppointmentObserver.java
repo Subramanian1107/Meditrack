@@ -1,6 +1,6 @@
-package com.airtribe.meditrack.observer;
+package main.java.com.airtribe.meditrack.observer;
 
-import com.airtribe.meditrack.entity.Appointment;
+import main.java.com.airtribe.meditrack.entity.Appointment;
 
 /** Observer for appointment notifications (e.g. reminders). */
 public interface AppointmentObserver {

@@ -1,18 +1,20 @@
-package com.airtribe.meditrack;
+package main.java.com.airtribe.meditrack;
 
-import com.airtribe.meditrack.constants.Constants;
-import com.airtribe.meditrack.entity.*;
-import com.airtribe.meditrack.exception.AppointmentNotFoundException;
-import com.airtribe.meditrack.exception.InvalidDataException;
-import com.airtribe.meditrack.observer.ConsoleReminderObserver;
-import com.airtribe.meditrack.service.AppointmentService;
-import com.airtribe.meditrack.service.DoctorService;
-import com.airtribe.meditrack.service.PatientService;
-import com.airtribe.meditrack.util.BillFactory;
+import main.java.com.airtribe.meditrack.constants.Constants;
+import main.java.com.airtribe.meditrack.entity.*;
+import main.java.com.airtribe.meditrack.exception.AppointmentNotFoundException;
+import main.java.com.airtribe.meditrack.exception.InvalidDataException;
+import main.java.com.airtribe.meditrack.observer.ConsoleRemainderObserver;
+import main.java.com.airtribe.meditrack.observer.EmailRemainderObserver;
+import main.java.com.airtribe.meditrack.observer.WhatsAppRemainderObserver;
+import main.java.com.airtribe.meditrack.service.AppointmentService;
+import main.java.com.airtribe.meditrack.service.DoctorService;
+import main.java.com.airtribe.meditrack.service.PatientService;
+import main.java.com.airtribe.meditrack.util.AIHelper;
+import main.java.com.airtribe.meditrack.util.BillFactory;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -27,7 +29,9 @@ public class Main {
         if (args.length > 0 && "--loadData".equals(args[0])) {
             loadPersistedData();
         }
-        appointmentService.addObserver(new ConsoleReminderObserver());
+        appointmentService.addObserver(new ConsoleRemainderObserver());
+        appointmentService.addObserver(new EmailRemainderObserver());
+        appointmentService.addObserver(new WhatsAppRemainderObserver());
         runMenu();
     }
 
@@ -233,6 +237,24 @@ public class Main {
     }
 
     private static void createAppointment() {
+        System.out.print("Enter symptom: ");
+        String symptom = sc.nextLine();
+
+        // AI recommends specialization
+        Specialization spec = AIHelper.recommendSpecialization(symptom);
+        System.out.println("AI recommends specialization: " + spec);
+
+        // AI recommends doctors
+        var doctors = AIHelper.recommendDoctors(symptom, doctorService.getAllDoctors());
+
+        if (doctors.isEmpty()) {
+            System.out.println("No doctors found for this symptom.");
+            return;
+        }
+
+        System.out.println("Recommended Doctors:");
+        doctors.forEach(System.out::println);
+
         System.out.print("Doctor ID: ");
         Doctor d = doctorService.getDoctor(readInt());
         System.out.print("Patient ID: ");
@@ -240,6 +262,13 @@ public class Main {
         if (d == null || p == null) {
             System.out.println("Doctor or patient not found.");
             return;
+        }
+        // AI slot suggestion
+        var slots = AIHelper.suggestSlots(d, appointmentService.getAllAppointments());
+
+        if (!slots.isEmpty()) {
+            System.out.println("AI Suggested Slots:");
+            slots.forEach(s -> System.out.println("  " + s));
         }
         Appointment a = appointmentService.bookAppointment(d, p, LocalDateTime.now());
         System.out.println("Created: " + a);

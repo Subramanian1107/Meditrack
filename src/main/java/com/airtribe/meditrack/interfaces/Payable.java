@@ -1,6 +1,6 @@
-package com.airtribe.meditrack.interfaces;
+package main.java.com.airtribe.meditrack.interfaces;
 
-import com.airtribe.meditrack.entity.BillSummary;
+import main.java.com.airtribe.meditrack.entity.BillSummary;
 
 public interface Payable {
 

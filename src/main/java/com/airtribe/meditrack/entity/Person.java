@@ -1,6 +1,6 @@
-package com.airtribe.meditrack.entity;
+package main.java.com.airtribe.meditrack.entity;
 
-import com.airtribe.meditrack.util.Validator;
+import main.java.com.airtribe.meditrack.util.Validator;
 
 public abstract class Person extends MedicalEntity {
 

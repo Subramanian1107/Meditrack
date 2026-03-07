@@ -1,7 +1,8 @@
-package com.airtribe.meditrack.entity;
+package main.java.com.airtribe.meditrack.entity;
 
-import com.airtribe.meditrack.constants.Constants;
-import com.airtribe.meditrack.interfaces.Payable;
+import main.java.com.airtribe.meditrack.constants.Constants;
+import main.java.com.airtribe.meditrack.interfaces.Payable;
+import main.java.com.airtribe.meditrack.entity.BillSummary;
 
 public class Bill implements Payable {
 

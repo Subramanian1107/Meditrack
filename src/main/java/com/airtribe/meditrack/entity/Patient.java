@@ -1,7 +1,7 @@
-package com.airtribe.meditrack.entity;
+package main.java.com.airtribe.meditrack.entity;
 
-import com.airtribe.meditrack.util.Validator;
-
+import main.java.com.airtribe.meditrack.util.Validator;
+import main.java.com.airtribe.meditrack.entity.Person;
 public class Patient extends Person implements Cloneable {
 
     private String medicalHistory;
@@ -24,11 +24,15 @@ public class Patient extends Person implements Cloneable {
 
     @Override
     public String toString() {
-        return "Patient{id=" + id + ", name='" + name + "', age=" + age + "}";
+        return "Patient{id=" + super.getId() + ", name='" + name + "', age=" + age + "}";
     }
 
     @Override
     public Patient clone() {
-        return new Patient(this.id, this.name, this.age, this.medicalHistory);
+        return new Patient(super.getId(), this.name, this.age, this.medicalHistory);
+    }
+
+    public String getName() {
+        return super.getName();
     }
 }

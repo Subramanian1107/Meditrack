@@ -1,4 +1,4 @@
-package com.airtribe.meditrack.constants;
+package main.java.com.airtribe.meditrack.constants;
 
 public class Constants {
 

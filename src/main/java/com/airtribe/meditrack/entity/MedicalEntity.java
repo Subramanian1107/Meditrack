@@ -1,4 +1,4 @@
-package com.airtribe.meditrack.entity;
+package main.java.com.airtribe.meditrack.entity;
 
 public abstract class MedicalEntity {
 

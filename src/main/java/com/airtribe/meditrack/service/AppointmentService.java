@@ -1,11 +1,12 @@
-package com.airtribe.meditrack.service;
+package main.java.com.airtribe.meditrack.service;
 
-import com.airtribe.meditrack.entity.*;
-import com.airtribe.meditrack.exception.AppointmentNotFoundException;
-import com.airtribe.meditrack.interfaces.Payable;
-import com.airtribe.meditrack.observer.AppointmentObserver;
-import com.airtribe.meditrack.util.BillFactory;
-import com.airtribe.meditrack.util.CSVUtil;
+import main.java.com.airtribe.meditrack.entity.*;
+import main.java.com.airtribe.meditrack.service.DoctorService;
+import main.java.com.airtribe.meditrack.exception.AppointmentNotFoundException;
+import main.java.com.airtribe.meditrack.interfaces.Payable;
+import main.java.com.airtribe.meditrack.observer.AppointmentObserver;
+import main.java.com.airtribe.meditrack.util.BillFactory;
+import main.java.com.airtribe.meditrack.util.CSVUtil;
 import com.airtribe.meditrack.util.DataStore;
 import com.airtribe.meditrack.util.IdGenerator;
 

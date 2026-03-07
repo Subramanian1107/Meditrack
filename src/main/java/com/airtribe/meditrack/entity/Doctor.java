@@ -1,7 +1,8 @@
-package com.airtribe.meditrack.entity;
+package main.java.com.airtribe.meditrack.entity;
 
-import com.airtribe.meditrack.util.Validator;
-
+import main.java.com.airtribe.meditrack.util.Validator;
+import main.java.com.airtribe.meditrack.entity.Person;
+import main.java.com.airtribe.meditrack.entity.Specialization;
 public class Doctor extends Person {
 
     private Specialization specialization;
@@ -40,7 +41,7 @@ public class Doctor extends Person {
 
     /** Copy constructor for deep cloning. */
     public Doctor(Doctor other) {
-        super(other.id, other.name, other.age);
+        super(other.getId(), other.getName(), other.age);
         this.specialization = other.specialization;
         this.experience = other.experience;
         this.fee = other.fee;
@@ -53,8 +54,12 @@ public class Doctor extends Person {
 
     @Override
     public String toString() {
-        return "Doctor{id=" + id + ", name='" + name + "', age=" + age +
+        return "Doctor{id=" + super.getId() + ", name='" + name + "', age=" + age +
                 ", specialization=" + specialization + ", experience=" + experience +
                 ", fee=" + fee + "}";
+    }
+
+    public String getName() {
+        return super.getName();
     }
 }

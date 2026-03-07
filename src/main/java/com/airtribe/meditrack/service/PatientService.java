@@ -1,8 +1,8 @@
-package com.airtribe.meditrack.service;
+package main.java.com.airtribe.meditrack.service;
 
-import com.airtribe.meditrack.entity.Patient;
-import com.airtribe.meditrack.interfaces.Searchable;
-import com.airtribe.meditrack.util.CSVUtil;
+import main.java.com.airtribe.meditrack.entity.Patient;
+import main.java.com.airtribe.meditrack.interfaces.Searchable;
+import main.java.com.airtribe.meditrack.util.CSVUtil;
 import com.airtribe.meditrack.util.DataStore;
 import com.airtribe.meditrack.util.IdGenerator;
 

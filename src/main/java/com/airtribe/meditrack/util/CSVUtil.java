@@ -1,7 +1,7 @@
-package com.airtribe.meditrack.util;
+package main.java.com.airtribe.meditrack.util;
 
-import com.airtribe.meditrack.entity.*;
-
+import main.java.com.airtribe.meditrack.entity.*;
+import com.airtribe.meditrack.util.DateUtil;
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -84,7 +84,7 @@ public final class CSVUtil {
         try (BufferedWriter w = Files.newBufferedWriter(Path.of(path))) {
             for (Appointment a : appointments) {
                 String line = a.getId() + DELIM + a.getDoctor().getId() + DELIM + a.getPatient().getId()
-                        + DELIM + DateUtil.format(a.getDateTime()) + DELIM + a.getStatus().name();
+                        + DELIM + DateUtil.format(a.getDateTime()) + DELIM + a.getStatus();
                 w.write(line);
                 w.newLine();
             }
