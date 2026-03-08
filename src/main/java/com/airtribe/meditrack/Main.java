@@ -350,6 +350,42 @@ public class Main {
         Map<String, Long> byDoctor = appointmentService.getAppointmentsPerDoctor();
         System.out.println("Appointments per doctor:");
         byDoctor.forEach((name, count) -> System.out.println("  " + name + ": " + count));
+        // Get data for AI methods
+        var doctors = doctorService.getAllDoctors();
+        var appointments = appointmentService.getAllAppointments();
+
+        // ---------------- AI FEATURE 1 ----------------
+        Doctor leastBusy = AIHelper.recommendLeastBusyDoctor(doctors, appointments);
+
+        if (leastBusy != null) {
+            System.out.println("\nAI Recommendation (Least Busy Doctor):");
+            System.out.println(leastBusy);
+        }
+
+        // ---------------- AI FEATURE 2 ----------------
+        System.out.print("\nEnter your consultation budget: ");
+        double budget = readDouble();
+
+        var affordableDoctors =
+                AIHelper.recommendAffordableDoctors(doctors, budget);
+
+        System.out.println("Doctors within your budget:");
+
+        if (affordableDoctors.isEmpty()) {
+            System.out.println("No doctors available within this budget.");
+        } else {
+            affordableDoctors.forEach(System.out::println);
+        }
+
+        // ---------------- AI FEATURE 3 ----------------
+        int peakHour = AIHelper.detectPeakHour(appointments);
+
+        if (peakHour != -1) {
+            System.out.println("\nAI Insight: Clinic peak appointment hour = "
+                    + peakHour + ":00");
+        } else {
+            System.out.println("\nNo appointment data available.");
+        }
     }
 
     private static Specialization readSpec() {
