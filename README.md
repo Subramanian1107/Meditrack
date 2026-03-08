@@ -1,5 +1,5 @@
 
-# 🏥 MediTrack – Clinic Management System
+# 🏥 MediTrack – Clinic Management System (Submission)
 
 MediTrack is a **Java-based console application** for managing clinic operations such as doctors, patients, appointments, billing, analytics, and AI-based assistance.
 
